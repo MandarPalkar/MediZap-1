@@ -11,23 +11,53 @@
     <?php
 
     require "dbcon.php";
+    function redirectFunction($loc){
+        header($loc);
+
+    }
+    function alert($msg){
+
+        echo "<script>alert('";
+        echo $msg;
+        echo "');</script>";
+
+    }
+
         if( $_SERVER["REQUEST_METHOD"]=="POST")
         {
         $email = $_POST['email'];
+        echo "The entered email is:".$email;
+        echo "<br>";
         $password = $_POST['password'];
-        $sql = "SELECT userPassword, userName from USERS where userEmail=$email or userPhoneNo=$email";
+        $sql = "SELECT userPassword, userName, userID from USERS where userEmail=$email or userPhoneNo=$email";
         $result = mysqli_query($conn, $sql);
-        echo var_dump(mysqli_fetch_assoc($result));
-      while ($var=mysqli_fetch_assoc($result)) {
-        $password1=$var["userPassword"];
-        $UserName=$var["userName"];
+        // echo var_dump($result)."is the result";
+        // echo "Count".count(mysqli_fetch_assoc($result));
+        // if(count(mysqli_fetch_assoc($result))==0)
+        // {
+            // echo "No such user exists!";
+            // alert("No such user exists");
+            // redirectFunction("location: login.php");
+
+            
+        // }
+        // echo "The count of rows returned is".count(mysqli_fetch_assoc($result));
+        echo "<br>";
+        // echo "Var dump:".var_dump(mysqli_fetch_assoc($result));
+      while ($row=mysqli_fetch_assoc($result) ) {
+          echo $row['userName'].="userNANME";
+        $password1=$row["userPassword"];
+        $UserName=$row["userName"];
+        $userID=$row["userID"];
+
         
     }
+    echo "Username=".$UserName.",Password=".$password." and password1".$password1;
             if($password1 == $password){
                 echo " LOGGING IN";
                 session_start();
                 $_SESSION['userName'] = $UserName;
-         
+                $_SESSION['userID'] = $userID;
                 header('location: index.php');
                 $_SESSION['loggedIn']=true;
         
