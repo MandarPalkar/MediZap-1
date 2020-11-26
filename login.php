@@ -7,6 +7,49 @@
     <title>MediZap</title>
 </head>
 
+<style>
+body {
+    background-color: #F4ECF7;
+}
+
+.container {
+    width: 350px;
+    height: 520px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+label,
+input {
+    margin: 15px;
+}
+
+input:focus {
+    outline: none;
+}
+
+input[type=text] {
+    border: none;
+    border-top-style: hidden;
+    border-left-style: hidden;
+    border-right-style: hidden;
+    border-bottom: 2px solid green;
+}
+
+input[type=password] {
+    border: none;
+    border-bottom: 2px solid green;
+}
+
+a:link {
+    color: black;
+}
+</style>
+
 <body>
     <?php
 
@@ -69,20 +112,25 @@
     }  
 
     ?>
-    <h1>Login Page</h1>
-    <form action="register.php" method="get">
-        <button style="float:right">New User</button>
-    </form>
-    <form action="login.php" method="post">
-        <label for="email">Email/Phone</label>
-        <input type="text" name="email" placeholder="Email or Phone" required>
-        <br>
-        <label for="password">Password</label>
-        <input type="password" name="password" placeholder="Password" required>
-        <br>
-        <input type="submit" value="Login">
+    <div class="container">
+        <h1
+            style="text-align: center; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);padding: 20px; margin-bottom: 40px; background-color: #27AE60; color: white; border-radius: 15px 15px 0px 0px;">
+            Login</h1>
 
-    </form>
+        <form action="register.php" method="get">
+            <button style="float:right">New User</button>
+        </form>
+        <form action="login.php" method="post">
+            <label for="email">Email/Phone</label>
+            <input type="text" name="email" placeholder="Email or Phone" required>
+            <br>
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Password" required>
+            <br>
+            <input type="submit" value="Login">
+
+        </form>
+    </div>
 </body>
 
 </html>

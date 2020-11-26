@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/s.css">
+  <title>Cart</title>
+</head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+<body>
+  <div class="shopping-cart">
+  <!-- Title -->
+  <div class="title">
+    Cart
+  </div>
+<!--<h2>Table With Border</h2>
+
+<p>Use the CSS border property to add a border to the table.</p>-->
+
+<table style="width:100%">
+  <tr>
+    <th width="150">Image</th>
+    <th>Product Name</th> 
+    <th>Quantity</th>
+    <th>Price(FOR 1)</th>
+    <th>Total Price</th>
+  </tr>
+  <tr>
+    <td><img src="Images/burnol.jpg" width="100" height="75"></td>
+    <td width="200">Burnol</td>
+    <td><div class="quantity">
+      <button class="plus-btn" type="button" name="button">
+        <img src="Images/p.png" width="18" height="18" alt="" />
+      </button>
+      <input type="text" name="name" value="1">
+      <button class="minus-btn" type="button" name="button">
+        <img src="Images/minus.png" width="18" height="18" alt="" />
+      </button>
+      <td>50</td>
+      <td>200</td>
+    </div></td>
+  </tr>
+  <tr>
+    <td><img src="Images/paracetamol.jpg" width="100" height="75"></td>
+    <td width="200">Paracetamol</td>
+    <td><div class="quantity">
+      <button class="plus-btn" type="button" name="button">
+        <img src="Images/p.png" width="18" height="18" alt="" />
+      </button>
+      <input type="text" name="name" value="1">
+      <button class="minus-btn" type="button" name="button">
+        <img src="Images/minus.png" width="18" height="18" alt="" />
+      </button>
+      <td>90</td>
+      <td>900</td>
+    </div></td>
+  </tr>
+  <tr>
+    <td><img src="Images/benadryl.png" width="100" height="75"></td>
+    <td width="200">Benadryl</td>
+    <td><div class="quantity">
+      <button class="plus-btn" type="button" name="button">
+        <img src="Images/p.png" width="18" height="18" alt="" />
+      </button>
+      <input type="text" name="name" value="1">
+      <button class="minus-btn" type="button" name="button">
+        <img src="Images/minus.png" width="18" height="18" alt="" />
+      </button>
+      <td>75</td>
+      <td>450</td>
+    </div></td>
+  </tr>
+</table>
+<p style="text-align: center">TOTAL PRICE: 1550/- </p>
+<form action="file:///C:/Users/patel/OneDrive/Desktop/checkout.html">
+  <input type="submit" value="Proceed to checkout" class="btn">
+</form>
+
+</body>
+</html>
